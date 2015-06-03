@@ -29,7 +29,7 @@ class apt::backports (
     }
   }
 
-  if ($::apt::xfacts['lsbdistid'] == 'debian' or $::apt::xfacts['lsbdistid'] == 'ubuntu') {
+  if (downcase($::apt::xfacts['lsbdistid']) == 'debian' or downcase($::apt::xfacts['lsbdistid']) == 'ubuntu') {
     unless $location {
       $_location = $::apt::backports['location']
     }
